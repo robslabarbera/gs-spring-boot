@@ -1,4 +1,19 @@
 pool:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      #!/bin/bash
+      jira_server="jira.bullhorn.com"
+      project="REL"
+      issuetype="Invenias Development Release"
+      
+      
+      api_data="{\"fields\":{\"project\":{\"key\":\"${project}\"},\"summary\":\"jira rest test\",\"description\": \"testing jira rest calls\",\"issuetype\":{\"name\":\"${issuetype}\"}}}"
+      
+      
+      
+      curl -u "${jira_user}":"${jira_pw}" -w "<%{http_code}>" -H "Content-Type: application/json" https://${jira_server}/rest/api/2/issue/ -X POST --data "${api_data}"
   vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
   demands: maven
 
