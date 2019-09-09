@@ -34,5 +34,3 @@ steps:
       
       
       curl -u "${jira_user}":"${jira_pw}" -w "<%{http_code}>" -H "Content-Type: application/json" https://${jira_server}/rest/api/2/issue/ -X POST --data "${api_data}"
-  vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
-  demands: maven
