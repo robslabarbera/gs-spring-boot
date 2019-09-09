@@ -27,6 +27,8 @@ steps:
       jira_server="jira.bullhorn.com"
       project="REL"
       issuetype="Invenias Development Release"
+      jira_user="jirarest"
+      jira_pw="Bu11h0rn!"
       
       
       api_data="{\"fields\":{\"project\":{\"key\":\"${project}\"},\"summary\":\"jira rest test\",\"description\": \"testing jira rest calls\",\"issuetype\":{\"name\":\"${issuetype}\"}}}"
